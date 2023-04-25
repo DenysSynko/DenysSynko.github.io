@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Tometo all</title>
+        <title>Sunflowers all</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive_ta.css">
         <meta name="viewport" content="width=320, initial-scale=1.0"/>
-        <link rel=>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     </head>
     <body>
         <header class="header">
@@ -31,7 +31,7 @@
         </header>
         
         <div class="ta_head_bg">
-            <img class="ta_main_img" src="images/tomatoAllBG.png" alt="">
+            <img class="ta_main_img" src="images/sunAllBG.jpg" alt="">
         </div>
         <div class="ta_main_h1">
             <h1 class="ta_main_h1_size">Agridera Fresh Market Tomato Hybrids</h1>
@@ -65,41 +65,14 @@
         <div class="ta_main_text3">
             <p>Agridera operates through international and local distributers around the world.</p>
         </div>
-        <div>
-            <div class="ta_photo1">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1000 (TAG 853)</b> <br>Tomato Determinate Red Standard Round</p>
-            </div>
-            <div class="ta_photo2">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1001 (TAG 855)</b> <br>Tomato Determinate Red Standard Round</p>
-            </div>
-            <div class="ta_photo3">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1002 (TAG 809)</b> <br>Tomato Determinate Red Standard Round</p>
-            </div>
-            <div class="ta_photo4">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1003 (TAG 834 )</b> <br>Tomato Determinate Red Standard Round</p>
-            </div>
-            <div class="ta_photo5">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1004 (TAG 848)</b> <br>Tomato Determinate Red BEEF Round</p>
-            </div>
-            <div class="ta_photo6">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1005 (TAG 800)</b> <br>Tomato Determinate Red Standard Round</p>
-            </div>
-            <div class="ta_photo7">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1006 (TAG 898)</b> <br>Tomato Determinate Red Elongated</p>
-            </div>
-            <div class="ta_photo8">
-                <a href="Tomato%20one.html"><img src="images/ta_photo.png" class="ta_img_photo" alt=""></a>
-                <p class="ta_txt_photo"><b>TAG 1007 (TAG 816)</b> <br>Tomato Determinate Red Elongated</p>
+        <div class="container2">
+            <div class="container">
+                <div v-if="products" v-for="p in products">
+                    <a :href="'Tomato%20one.html#'+p.id"><img :src="'images/'+p.image" class="ta_img_photo" alt=""></a>
+                    <p class="ta_txt_photo"><b>{{p.title}}</b> <br>{{p.short_text}}</p>
+                </div>
             </div>
         </div>
-        
         <div class="footer1">
             <nav class="footer_link_nav">
                 <a href="#!" class="footer_link">PROFILE</a>
@@ -120,5 +93,6 @@
         <div class="footer2">
             <h3 class="footer2_text">AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</h3>
         </div>
+        <script src="js/main.js"></script>
     </body>
 </html>

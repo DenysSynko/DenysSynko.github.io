@@ -1,11 +1,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Tomato one</title>
+        <title>Sunflower one</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive_to.css">
         <meta name="viewport" content="width=320, initial-scale=1.0"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     </head>
     <body>
         <header class="header">
@@ -27,31 +28,32 @@
                 </div>
             </div>
         </header>
-        
-        <div class="ta_head_bg">
-            <img src="images/Arrow.png"  class="to_arrow" alt="">
-            <a href="Tomato%20all.html" class="to_link_back">Return to all tomatoes</a>
-        </div>
-        <div class="to_head">
-            <h1 class="to_head_text">TAG 1002 (TAG 809)</h1> 
-            <h1 class="to_head_text_g">Tomato Determinate <br>Red Standard Round</h1>
-            <p class="to_head_st">*****</p>
-        </div>
-        <div class="to_bg">
-            <div class="to_bg_img">
-                <img src="images/to_tomato_ico.png" class="to_under_head_ico" alt="">
-                <h2 class="to_under_head_text">Very high yield and <br>excellent fruits quality!</h2>
+        <div class="container2">
+            <div class="ta_head_bg">
+                <img src="images/Arrow.png"  class="to_arrow" alt="">
+                <a href="Tomato%20all.html" class="to_link_back">Return to all sunflowers</a>
             </div>
-        </div>
-        <div class="to_character">
-            <h3 class="to_character_head">CHARACTERISTICS</h3>
-            <p class="to_character_text"><b>Resistance</b> <br>HR: ToMV:0-2; Fol: 1,2; Ve/Vd; <br>IR: TYLCV</p>
-        </div>
-        <div>
-            <img src="images/to_main_img.jpg" class="to_main_img" alt="">
-        </div>
-        <div class="to_downland">
-            <a href="#!"><img src="images/Btn_to_pdf.png" alt=""></a>
+            <div class="to_head">
+                <h1 class="to_head_text">{{product.title}}</h1> 
+                <h1 class="to_head_text_g">{{product.short_text}}</h1>
+                <p class="to_head_st">*****</p>
+            </div>
+            <div class="to_bg">
+                <div class="to_bg_img">
+                    <img src="images/to_tomato_ico.png" class="to_under_head_ico" alt="">
+                    <h2 class="to_under_head_text">Very high yield and <br>excellent fruits quality!</h2>
+                </div>
+            </div>
+            <div class="to_character">
+                <h3 class="to_character_head">CHARACTERISTICS</h3>
+                <p class="to_character_text"><b>Resistance</b> <br>HR: ToMV:0-2; Fol: 1,2; Ve/Vd; <br>IR: TYLCV</p>
+            </div>
+            <div>
+                <img :src="'images/'+product.image" class="to_main_img" alt="">
+            </div>
+            <div class="to_downland">
+                <a href="#!"><img src="images/Btn_to_pdf.png" alt=""></a>
+            </div>
         </div>
         <div class="to_list_plant">
             <h3><b>Plant</b></h3>
@@ -108,5 +110,6 @@
                 <h3 class="footer2_text">AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</h3>
             </div>
         </div>
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -425,15 +425,16 @@ background: #57984C;
     color: #B9B9B9;
 }
 /*tomato all*/
+
 .ta_head_bg{
     background: #FFFFFF;
     width: 100%;
     height: 138px;
 }
 .ta_bg{
-    background: #E5E5E5;
+    background: #FFFBDB;
     width: 100%;
-    height: 2832px;
+    height: 2015px;
 }
 .ta_main_img{
     position: absolute;
@@ -453,6 +454,15 @@ background: #57984C;
     color:#57984C;
     padding-top: 36px;
 
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #FFFBDB;
+}
+.ta_img_photo{
+    margin: 10px;
 }
 .ta_main_text1{
     position: absolute;

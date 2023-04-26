@@ -9,11 +9,34 @@
         <meta name="viewport" content="width=320, initial-scale=1.0"/>
         <link rel="manifest" href="/manifest.json">
         <script>
+            function askPermission(){
+                return new Promise(function(resolve, reject){
+                    const permissionResult = Notification.requestPermission(function(result) {
+                        resolve(result);
+                    });
+                    if(permissionResult){
+                        permissionResult.then(resolve, reject);
+                    }
+                })
+                .then(function(permissionResult){
+                    if(permissionResult !== 'granted'){
+                        throw new Error('We weren\'t granted permission.');
+                    }
+                });
+            }
             if ('serviceWorker' in navigator) {
             navigator.serviceWorker
             .register('/sw.js')
             .then(function() {
                console.log('Service worker registered!');
+            });
+            navigator.serviceWorker.ready.then(registration => {
+                if('PushManager' in window){
+                    document.querySelector('button.subscribe-for-push')
+                        .addEventListener('click', () => {
+                            askPermission()
+                        });
+                }
             });
             }
         </script>
@@ -42,6 +65,7 @@
         <div class="banner">
             <div class="head_read">
                 <h1 class="head_text">Agridera Seeds and Agriculture Ltd</h1>
+                <button type="submit" class="subscribe-for-push">subscribe</button>
                 <button type="submit" class="button">READ MORE</button>
             </div>
         </div>
